@@ -50,6 +50,7 @@ function init() {
       inquirer.prompt(questions)
       .then((answers)=>
       {
+            generateMarkdown(answers)
             console.log("Creating README...");
       })
 }
