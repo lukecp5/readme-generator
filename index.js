@@ -15,18 +15,28 @@ const questions = [
                   type: "input",
                   message: "What is your email address?" 
             },{
-                  name: "username",
+                  name: "description",
                   type: "input",
-                  message: "What is your GitHub username?" 
+                  message: "Enter a short description of your project" 
             },{
-                  name: "username",
-                  type: "input",
-                  message: "What is your GitHub username?" 
+                  name: "license",
+                  type: "list",
+                  message: "What license would you like to use?",
+                  choices: ["MIT", "APACHE 2.0", "BSD 3", "GPL 3.0", "None"]
             },{
-                  name: "username",
+                  name: "installation",
                   type: "input",
-                  message: "What is your GitHub username?" 
+                  message: "What command should the end user run in order to install the dependencies for your project?" 
+            },{
+                  name: "usage",
+                  type: "input",
+                  message: "What commands and/or information does the user need in order to use your project?" 
+            },{
+                  name: "contributions",
+                  type: "input",
+                  message: "What would you would like the end user to know about contributing to your repository?" 
             }
+            
 ];
 
 // TODO: Create a function to write README file
