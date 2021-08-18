@@ -1,0 +1,35 @@
+{
+  "name": "readme-generator",
+  "version": "0.0.9",
+  "description": "This is a CLI application that will generate a quality README for any project. Simply fill in the command-line prompts, and the README will be generated based on your entries. Perfect for developers who need a stylish and formatted README, but don't have the time to learn the ins and outs of markdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukecp5/readme-generator.git"
+  },
+  "keywords": [
+    "readme",
+    "generator",
+    "cli",
+    "readme",
+    "cli",
+    "generator",
+    "generator",
+    "readme",
+    "builder",
+    "readme.md",
+    "maker"
+  ],
+  "author": "Luke Poirrier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukecp5/readme-generator/issues"
+  },
+  "homepage": "https://github.com/lukecp5/readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  }
+}
