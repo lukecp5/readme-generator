@@ -1,26 +1,46 @@
-const licenseURLS = {
-  MIT: "https://opensource.org/licenses/MIT",
-  ISC: "https://opensource.org/licenses/ISC",
-  "APACHE 2.0": "https://opensource.org/licenses/Apache-2.0",
-  "BSD 3": "https://opensource.org/licenses/BSD-3-Clause",
-  "GPL 3.0": "https://www.gnu.org/licenses/gpl-3.0",
-  "IPL 1.0": "https://opensource.org/licenses/IPL-1.0",
-  "MPL 2.0": "https://opensource.org/licenses/MPL-2.0",
-  "Unlicense": "http://unlicense.org/"
-};
+const licenseURLS = [
+  {
+  'license' : 'MIT',
+  'url' : "https://opensource.org/licenses/MIT"
+  },{
+  'license' : 'ISC',
+  'url' : "https://opensource.org/licenses/ISC"
+},{
+  'license' : 'APACHE 2.0',
+  'url' : "https://opensource.org/licenses/Apache-2.0"
+},{
+  'license' : 'BSD 3',
+  'url' : "https://opensource.org/licenses/BSD-3-Clause"
+},{
+  'license' : 'GPL 3.0',
+  'url' : "https://www.gnu.org/licenses/gpl-3.0"
+},{
+  'license' : 'IPL 1.0',
+  'url' : "https://opensource.org/licenses/IPL-1.0"
+},{
+  'license' : 'MPL 2.0',
+  'url' : "https://opensource.org/licenses/MPL-2.0"
+},{
+  'license' : 'Unlicense',
+  'url' : "http://unlicense.org/"
+}
+];
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // ! If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license != "None") {
-    if(license.indexOf(' ') >= 0){ 
+    if(license.indexOf(' ') >= 0){
+    console.log("SPACE IN LICENSE") 
     let fixedLicense = license.split(' ');
-    const {a,b} = fixedLicense;
+    console.log("FIXED LICENSE")
+    const [a,b] = fixedLicense;
     let kosherURL = `${a}%20${b}`
-    console.log(`${kosherURL}`);
-    return `![GitHub license]('https://img.shields.io/badge/license-${kosherURL}-blue.svg')`;
+    console.log(`COMBINED URL WITH SPACES INTO A WEB FRIENDLY FORMAT: ${kosherURL}`);
+    return `![GitHub license](https://img.shields.io/badge/license-${kosherURL}-blue.svg)`;
   }else{
-    console.log(fixedLicense);
-    return `![GitHub license]('https://img.shields.io/badge/license-${license}-blue.svg')`;
+    console.log(`${license}`);
+    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
   }}
   return ``;
 }
@@ -29,7 +49,16 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license != "None"){
-    return `License URL TEST: ![${license} License](${licenseURLS[license]})`
+    for(i=0; i< licenseURLS.length; i++){
+      if(licenseURLS[i].license == license){
+        return `[${license} License](${licenseURLS[i].url})`
+      }
+    }
+    const url = `${licenseURLS[license]}`;
+    console.log(`Current URL: ${url}`);
+    console.log(`licenseURLS[] URL: ${licenseURLS[license]}`);
+    console.log(`licenseURLS. URL: ${licenseURLS.license}`);
+    return `License URL TEST: ![${license} License](${url});`
   }
   return ``;
 }
@@ -40,6 +69,7 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  const {license, descripription, username, projectTitle:title, email, installation, usage, contributions} = data;
   return `# ${data.title}
   ## License
   ${renderLicenseBadge(data.license)}
