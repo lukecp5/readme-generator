@@ -11,7 +11,7 @@ README Generator was created as a solution to the problem that many developers f
 * [Technologies](#technologies)
 * [License](#installation)
 * [Contributing](#installation)
-
+---
   
 ## Installation
 To install this application and its dependencies, simply run these commands in the directory that you'd like the application to reside in(from the command-line):
@@ -22,6 +22,8 @@ npm install
 ```
 ![readme-generator Installation](https://github.com/lukecp5/readme-generator/blob/main/assets/install-example.png?raw=true)
 
+---
+
 ## Usage
 You will use Node.js to run the application once you have it cloned and all of the depencies installed. Enter this command inside the readme-generator directory:
   node index.js
@@ -29,14 +31,20 @@ Upon running the application, you will be presented with a series of questions a
 
 ![Usage Example screenshot](https://github.com/lukecp5/readme-generator/blob/main/assets/usage-2.png?raw=true)
 
+---
+
 ## Technologies
   - Node.js
   - Inquirer(npm package)
   - fs(built-in npm package)
   - path(built-in npm package)
 
+---
+
 ## License 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT)
+
+---
 
 ## Contributing
  1. **Fork** the repo on GitHub
