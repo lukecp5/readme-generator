@@ -45,26 +45,28 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license != "None"){
+    return `\n* [License](#license)\n`
+  }
+  return ``;
+}
+
+// Function to get the URL of the user's selected license
+function renderLicenseURL(license){
+  if(license != 'None'){
     for(i=0; i< licenseURLS.length; i++){
       if(licenseURLS[i].license == license){
         return `[${license} License](${licenseURLS[i].url})`
       }
     }
-    // const url = `${licenseURLS[license]}`;
-    // console.log(`Current URL: ${url}`);
-    // console.log(`licenseURLS[] URL: ${licenseURLS[license]}`);
-    // console.log(`licenseURLS. URL: ${licenseURLS.license}`);
-    // return `License URL TEST: ![${license} License](${url});`
-  }
-  return ``;
+    return '';
 }
-
+}
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  return (license ? `
-  ## License
-  This project is license under the ${renderLicenseLink(license)}` : ``);
+  return (license ? `  
+  ## License 
+  This project is license under the ${renderLicenseURL(license)}` : ``);
 }
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -80,20 +82,30 @@ function generateMarkdown(data) {
   * [Installation](#installation)
 
   * [Usage](#usage)
-
+  ${renderLicenseLink(license)}
   * [Contributing](#contributing)
 
   * [Tests](#tests)
+
+  * [Questions](#questions)
+
   ## Installation
-    ${installation}
+  Run the following command to install the necessary dependencies:
+  ~~~
+  ${installation}
+  ~~~
   ## Usage
-    ${usage}
+  ~~~
+  ${usage}
+  ~~~
   ## Contributing
   ${contributions}
   ${renderLicenseSection(license)}
   ## Tests
   This is the command to run for testing:   
-    ${test}
+  ~~~
+  ${test}
+  ~~~
   ## Questions
   If you have questions about the project or repository, feel free to open an issue in the repository or contact me directly at ${email}. You can find more of my work on my GitHub: [${username}](https://github.com/${username}).
 `;
