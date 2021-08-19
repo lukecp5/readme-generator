@@ -12,8 +12,16 @@ const licenseURLS = {
 // ! If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license != "None") {
-    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
-  }
+    if(license.indexOf(' ') >= 0){ 
+    let fixedLicense = license.split(' ');
+    const {a,b} = fixedLicense;
+    let kosherURL = `${a}%20${b}`
+    console.log(`${kosherURL}`);
+    return `![GitHub license]('https://img.shields.io/badge/license-${kosherURL}-blue.svg')`;
+  }else{
+    console.log(fixedLicense);
+    return `![GitHub license]('https://img.shields.io/badge/license-${license}-blue.svg')`;
+  }}
   return ``;
 }
 
@@ -21,7 +29,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license != "None"){
-
+    return `License URL TEST: ![${license} License](${licenseURLS[license]})`
   }
   return ``;
 }
@@ -33,8 +41,9 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  ${renderLicenseBadge(data.license)};
-
+  ## License
+  ${renderLicenseBadge(data.license)}
+  ${renderLicenseLink(data.license)}
   ## Description
 
   ## Installation
