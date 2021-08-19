@@ -44,7 +44,6 @@ const questions = [
             
 ];
 
-// TODO: Create a function to write README file
 
 // TODO: Create a function to initialize app
 function init() {
@@ -67,10 +66,11 @@ function init() {
             }
       })
 }
+// TODO: Create a function to write README file
 // + Function that takes the username or projectTitle from the answers, and creates a file `${username}.md` to hold the generated markdown. This writeToFile function also calls the generateMarkdown function, passing it the data received from the inquirer prompts as 'data' */
 function writeToFile(data){
       const {username, projectTitle:pt} = data;
-      fs.writeFile(`${pt}.md`, generateMarkdown(data), (err) => {
+      fs.writeFile(`./gen-readmes/${pt}.md`, generateMarkdown(data), (err) => {
             err?console.log(err):console.log(`Success! We have successfully generated your README.md in /${pt}/README.md`);
       })
 }
