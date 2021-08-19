@@ -11,8 +11,8 @@ README Generator was created as a solution to the problem that many developers f
 * [Technologies](#technologies)
 * [License](#installation)
 * [Contributing](#installation)
-* [Installation](#installation)
 
+  
 ## Installation
 To install this application and its dependencies, simply run these commands in the directory that you'd like the application to reside in(from the command-line):
 ```
