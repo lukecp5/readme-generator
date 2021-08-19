@@ -31,15 +31,11 @@ const licenseURLS = [
 function renderLicenseBadge(license) {
   if (license != "None") {
     if(license.indexOf(' ') >= 0){
-    console.log("SPACE IN LICENSE") 
     let fixedLicense = license.split(' ');
-    console.log("FIXED LICENSE")
     const [a,b] = fixedLicense;
-    let kosherURL = `${a}%20${b}`
-    console.log(`COMBINED URL WITH SPACES INTO A WEB FRIENDLY FORMAT: ${kosherURL}`);
-    return `![GitHub license](https://img.shields.io/badge/license-${kosherURL}-blue.svg)`;
+    let accURL = `${a}%20${b}`
+    return `![GitHub license](https://img.shields.io/badge/license-${accURL}-blue.svg)`;
   }else{
-    console.log(`${license}`);
     return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
   }}
   return ``;
@@ -54,35 +50,47 @@ function renderLicenseLink(license) {
         return `[${license} License](${licenseURLS[i].url})`
       }
     }
-    const url = `${licenseURLS[license]}`;
-    console.log(`Current URL: ${url}`);
-    console.log(`licenseURLS[] URL: ${licenseURLS[license]}`);
-    console.log(`licenseURLS. URL: ${licenseURLS.license}`);
-    return `License URL TEST: ![${license} License](${url});`
+    // const url = `${licenseURLS[license]}`;
+    // console.log(`Current URL: ${url}`);
+    // console.log(`licenseURLS[] URL: ${licenseURLS[license]}`);
+    // console.log(`licenseURLS. URL: ${licenseURLS.license}`);
+    // return `License URL TEST: ![${license} License](${url});`
   }
   return ``;
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
+function renderLicenseSection(license) {
+  return (license ? `
+  ## License
+  This project is license under the ${renderLicenseLink(license)}` : ``);
+}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const {license, description, username, projectTitle:title, email, installation, usage, contributions} = data;
-  return `# ${data.title}
-  ## License
-  ${renderLicenseBadge(data.license)}
-  ${renderLicenseLink(data.license)}
-
+  return `# **${title}**
+  ${renderLicenseBadge(data.license)}       
   ## Description
+
   ${description}
+
+  ## Table of Contents
+
+  * [Installation](#installation)
+
+  * [Usage](#usage)
+
+  * [Contributing](#contributing)
+
+  
   ## Installation
   ${installation}
   ## Usage
   ${usage}
   ## Contributing
   ${contributions}
+  ${renderLicenseSection(license)}
 `;
 }
 

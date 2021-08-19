@@ -38,7 +38,7 @@ bower_components
 build/Release
 
 # READMEs Generated during testing - Make sure to move the generator path from the ./gen-readmes/ folder to ./ before deployment 
-
+gen-readmes/
 # Dependency directories
 node_modules/
 jspm_packages/

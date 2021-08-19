@@ -27,19 +27,26 @@ const questions = [
                   type: "list",
                   name: "license",
                   message: "What license would you like to use?",
-                  choices: ["MIT", "ISC", "APACHE 2.0", "BSD 3", "GPL 3.0", "IPL 1.0", "MPL 2.0", "Unlicense", "None"]
+                  choices: ["MIT", "ISC", "APACHE 2.0", "BSD 3", "GPL 3.0", "IPL 1.0", "MPL 2.0", "Unlicense", "None"],
             },{
                   type: "input",
                   name: "installation",
-                  message: "What command should the end user run in order to install the dependencies for your project?" 
+                  message: "What command should the end user run in order to install the dependencies for your project?",
+                  default: "npm install"
+            },{
+                  type: "input",
+                  name: "test",
+                  message: "What command should the end user run to run tests?",
+                  default: "npm test"
             },{
                   type: "input",
                   name: "usage",
                   message: "What commands and/or information does the user need in order to use your project?" 
-            },{
+            },
+            {
                   type: "input",
                   name: "contributions",
-                  message: "What would you would like the end user to know about contributing to your repository?" 
+                  message: "What would you would like the end user to know about contributing to your repository?",
             }
             
 ];
@@ -71,7 +78,7 @@ function init() {
 function writeToFile(data){
       const {username, projectTitle:pt} = data;
       fs.writeFile(`./gen-readmes/${pt}.md`, generateMarkdown(data), (err) => {
-            err?console.log(err):console.log(`Success! We have successfully generated your README.md in /${pt}/README.md`);
+            err?console.log(err):console.log(`Success! We have successfully generated your README as ${pt}.md`);
       })
 }
 
