@@ -1,5 +1,5 @@
 # README Generator
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)     
 README Generator was created as a solution to the problem that many developers face - Writing a README for every new project they create. This is a CLI(Command Line Interface) application that generates a styled comprehensive README.md file, based on the users entries into the command-line prompts. This application uses inquirer to prompt the user with a series of questions: GitHub Username, Email Address, Project Name, Project Description, License, dependencies, tests, usage information, and contributing to the project. After the user has answered all of the questions in the command-line, a README.md will be created inside the current working directory with the answers to the earlier questions embedded inside the applications README template.
 
 [GIF of application in action here]
