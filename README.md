@@ -14,18 +14,21 @@ README Generator was created as a solution to the problem that many developers f
 
 ### Installation
 To install this application and its dependencies, simply run these commands in the directory that you'd like the application to reside in(from the command-line):
-  git clone git@github.com:lukecp5/readme-generator.git
-  cd readme-generator
-  npm install
-[Installation Image here]
+```
+git clone git@github.com:lukecp5/readme-generator.git
+cd readme-generator
+npm install     
+```
+![readme-generator Installation](https://github.com/lukecp5/readme-generator/blob/main/assets/install-example.png?raw=true)
 
 ### Usage
 You will use Node.js to run the application once you have it cloned and all of the depencies installed. Enter this command inside the readme-generator directory:
   node index.js
 Upon running the application, you will be presented with a series of questions about yourself and your project. Fill in your answers for each question, pressing enter after you've completed each answer. Once you have filled in all of the answers, a README.md file will be created in your current working directory.
-[Usage Example image here]
 
-## Technologies Used
+![Usage Example screenshot](https://github.com/lukecp5/readme-generator/blob/main/assets/usage-2.png?raw=true)
+
+## Technologies
   - Node.js
   - Inquirer(npm package)
   - fs(built-in npm package)
