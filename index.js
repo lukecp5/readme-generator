@@ -26,7 +26,7 @@ const readmeInfo = [
                   type: "list",
                   name: "license",
                   message: "What license would you like to use?",
-                  choices: [ "APACHE 2.0", "BSD 3", "GPL 3.0", "IPL 1.0", "ISC", "MIT", "MPL 2.0", "Unlicense", "None"],
+                  choices: [ "APACHE 2.0", "BSD 3", "GPL 3.0", "IPL 1.0", "ISC", "MIT", "MPL 2.0", "Unlicense", "No License"],
             },{
                   type: "input",
                   name: "installation",

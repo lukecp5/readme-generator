@@ -29,7 +29,7 @@ const licenseURLS = [
 // TODO: Create a function that returns a license badge based on which license is passed in
 // ! If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license != "None") {
+  if (license != "No License") {
     if(license.indexOf(' ') >= 0){
     let fixedLicense = license.split(' ');
     const [a,b] = fixedLicense;
@@ -44,7 +44,7 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license != "None"){
+  if (license != "No License"){
     return `\n  * [License](#license)\n`
   }
   return ``;
@@ -52,7 +52,7 @@ function renderLicenseLink(license) {
 
 // Function to get the URL of the user's selected license
 function renderLicenseURL(license){
-  if(license != 'None'){
+  if(license != 'No License'){
     for(i=0; i< licenseURLS.length; i++){
       if(licenseURLS[i].license == license){
         return `[${license} License](${licenseURLS[i].url})`
@@ -90,7 +90,7 @@ function generateMarkdown(data) {
   * [Questions](#questions)
 
   ## Installation
-  Run the following command to install the necessary dependencies:
+  Run this command to install the necessary dependencies:
   ~~~
   ${installation}
   ~~~
@@ -107,7 +107,7 @@ function generateMarkdown(data) {
   ${test}
   ~~~
   ## Questions
-  If you have questions about the project or repository, feel free to open an issue in the repository or contact me directly at ${email}. You can find more of my work on my GitHub: [${username}](https://github.com/${username}).
+  For questions or comments about the project, feel free to open an issue in the repository or contact me directly at ${email}. To see my other projects, check out my GitHub: [${username}](https://github.com/${username}).
 `;
 }
 
