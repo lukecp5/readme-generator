@@ -34,9 +34,9 @@ function renderLicenseBadge(license) {
     let fixedLicense = license.split(' ');
     const [a,b] = fixedLicense;
     let accURL = `${a}%20${b}`
-    return `![GitHub license](https://img.shields.io/badge/license-${accURL}-blue.svg)`;
+    return `![GitHub license](https://img.shields.io/badge/license-${accURL}-red.svg)`;
   }else{
-    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
+    return `![GitHub license](https://img.shields.io/badge/license-${license}-red.svg)`;
   }}
   return ``;
 }

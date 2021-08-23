@@ -53,14 +53,15 @@ const readmeInfo = [
 
 // TODO: Create a function to initialize app
 function init() {
+      // console.log(`WARNING: If you run this in your projects directory, your existing README.md file will be overwritten with your generated README.md.`)
       inquirer
       .prompt(readmeInfo)
       .then((answers)=>
       {
             const {username, projectTitle:title} = answers;
             console.log(`USERNAME: ${username} PROJECT NAME: ${title}`) 
-            console.log(generateMarkdown(answers));
-            console.log("Creating README...");
+            generateMarkdown(answers);
+            console.log("Your readme has been generated in the current directory with the filename README.md");
             writeToFile(answers);
             return answers;
       })
@@ -76,7 +77,7 @@ function init() {
 // + Function that takes the username or projectTitle from the answers, and creates a file `${username}.md` to hold the generated markdown. This writeToFile function also calls the generateMarkdown function, passing it the data received from the inquirer prompts as 'data' */
 function writeToFile(data){
       const {username, projectTitle:pt} = data;
-      fs.writeFile(`README.md`, generateMarkdown(data), (err) => {
+      fs.writeFile(`${pt}.md`, generateMarkdown(data), (err) => {
             err?console.log(err):console.log(`Success! We have successfully generated your README as ${pt}.md`);
       })
 }
