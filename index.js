@@ -1,11 +1,10 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
-const path = require('path');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 // + Array of questions to be asked of the user. We will use the various answers from the inquirer prompts to populate the sections of our generated readme.md(${projectTitle}.md)
-const questions = [
+const readmeInfo = [
             {
                   name: "username",
                   type: "input",
@@ -27,7 +26,7 @@ const questions = [
                   type: "list",
                   name: "license",
                   message: "What license would you like to use?",
-                  choices: ["MIT", "ISC", "APACHE 2.0", "BSD 3", "GPL 3.0", "IPL 1.0", "MPL 2.0", "Unlicense", "None"],
+                  choices: [ "APACHE 2.0", "BSD 3", "GPL 3.0", "IPL 1.0", "ISC", "MIT", "MPL 2.0", "Unlicense", "None"],
             },{
                   type: "input",
                   name: "installation",
@@ -36,7 +35,7 @@ const questions = [
             },{
                   type: "input",
                   name: "test",
-                  message: "What command should the end user run to run tests?",
+                  message: "How should users invoke the testing for your application?",
                   default: "npm test"
             },{
                   type: "input",
@@ -46,7 +45,7 @@ const questions = [
             {
                   type: "input",
                   name: "contributions",
-                  message: "What would you would like the end user to know about contributing to your repository?",
+                  message: "How can other developers contribute to your repository?",
             }
             
 ];
@@ -55,7 +54,7 @@ const questions = [
 // TODO: Create a function to initialize app
 function init() {
       inquirer
-      .prompt(questions)
+      .prompt(readmeInfo)
       .then((answers)=>
       {
             const {username, projectTitle:title} = answers;
