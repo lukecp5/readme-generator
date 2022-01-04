@@ -72,8 +72,8 @@ function init() {
             }
       })
 }
-// TODO: Create a function to write README file
-// + Function that takes the username or projectTitle from the answers, and creates a file `${username}.md` to hold the generated markdown. This writeToFile function also calls the generateMarkdown function, passing it the data received from the inquirer prompts as 'data' */
+
+/* + Function that takes the username or projectTitle from the answers, and creates a file `${username}.md` to hold the generated markdown. This writeToFile function also calls the generateMarkdown function, passing it the data received from the inquirer prompts as 'data' */
 function writeToFile(data){
       const {username, projectTitle:pt} = data;
       fs.writeFile(`${pt}.md`, generateMarkdown(data), (err) => {
