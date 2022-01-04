@@ -50,8 +50,7 @@ const readmeInfo = [
             
 ];
 
-
-// TODO: Create a function to initialize app
+// + Function that will prompt the user for the information needed to generate the README. It will then call the writeToFile function to write the file.
 function init() {
       // console.log(`WARNING: If you run this in your projects directory, your existing README.md file will be overwritten with your generated README.md.`)
       inquirer
