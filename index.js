@@ -1,8 +1,8 @@
-// TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require('inquirer');
+// + Import the `generateMarkdown` function to use in the `writeToFile` function
 const generateMarkdown = require('./utils/generateMarkdown');
-// TODO: Create an array of questions for user input
+
 // + Array of questions to be asked of the user. We will use the various answers from the inquirer prompts to populate the sections of our generated readme.md(${projectTitle}.md)
 const readmeInfo = [
             {
@@ -16,7 +16,7 @@ const readmeInfo = [
             },{
                   name: "email",
                   type: "input",
-                  message: "What is your email address?" 
+                  message: "What email address would you like to use for users with questions or comments?" 
             },{
                   name: "description",
                   type: "input",
